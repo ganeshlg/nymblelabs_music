@@ -5,23 +5,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3067dcb-645e-476e-88c4-7eb4e2c7e4b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_state.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/icon/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/music_background/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/details_page/components/details_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/details_page/components/wave_animation.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/details_page/details_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/home_page/components/music_grid.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/home_page/components/music_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/home_page/components/music_search_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/home_page/components/radial_expansion.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/home_page/home_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/login_page/components/email_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/login_page/components/login_button.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/login_page/components/password_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/login_page/login_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/navigator.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app/status.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/constants.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/data/signup_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/dartpad/web_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/nymblelabs_music_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/nymblelabs_music_android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.bin.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/flutter_assets/NOTICES" beforeDir="false" afterPath="$PROJECT_DIR$/build/flutter_assets/NOTICES" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/details_page/Mobile/details_page_mobile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/Mobile/details_page_mobile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/details_page/Web/details_page_web.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/Web/details_page_web.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/details_page/details_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/details_page/bloc/details_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/details_page/bloc/details_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/details_page/bloc/details_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/home_page/Mobile/home_page_mobile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/Mobile/home_page_mobile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/home_page/Web/home_page_web.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/Web/home_page_web.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/home_page/home_page_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/details_page/bloc/details_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_state.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/login_page/Mobile/login_page_mobile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login_page/Mobile/login_page_mobile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/login_page/Web/login_page_web.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login_page/Web/login_page_web.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/login_page/login_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/home_page/bloc/home_page_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/login_page/bloc/login_bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_bloc.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/login_page/bloc/login_event.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_event.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/login_page/bloc/login_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/login_page/bloc/login_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/details_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/details_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/login_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/login_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/song_details_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/song_details_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/widget_test_cases/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test_cases/widget_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,31 +104,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/anirudhrp/Desktop/nymblelabs_music/lib/app/details_page&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/anirudhrp/Desktop/nymblelabs_music/assets/music_background",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/music_background" />
       <recent name="$PROJECT_DIR$/lib/app/details_page" />
       <recent name="$PROJECT_DIR$/lib/app/home_page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/icon" />
+      <recent name="$PROJECT_DIR$/lib/models" />
+      <recent name="$PROJECT_DIR$/lib/models/login_models" />
+      <recent name="$PROJECT_DIR$/lib" />
       <recent name="$PROJECT_DIR$/lib/app/login_page/bloc" />
-      <recent name="$PROJECT_DIR$/lib/app/home_page/bloc" />
-      <recent name="$PROJECT_DIR$/lib/app/details_page/bloc" />
-      <recent name="$PROJECT_DIR$/test/widget_test_cases" />
-      <recent name="$PROJECT_DIR$/test/unit_test_cases" />
     </key>
   </component>
   <component name="RunManager">

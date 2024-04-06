@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/nymblelabs_music.iml" filepath="$PROJECT_DIR$/nymblelabs_music.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/nymblelabs_music_android.iml" filepath="$PROJECT_DIR$/android/nymblelabs_music_android.iml" />
     </modules>
   </component>
 </project>
