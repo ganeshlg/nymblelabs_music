@@ -11,8 +11,7 @@ Future<void> main() async {
 
   final collection = await BoxCollection.open(
     'NymbleMusic', // Name of your database
-    {'login_credentials', 'songs', 'favorites'},
-    // Names of your boxes
+    {'login_credentials', 'songs', 'favorites'}, // Names of your boxes
     key: HiveAesCipher([
       1,
       1,
@@ -52,20 +51,15 @@ Future<void> main() async {
   Constants.loginCredentialsBox =
       await collection.openBox<Map>('login_credentials');
 
-  await Constants.loginCredentialsBox?.clear();
-
   await Constants.loginCredentialsBox
       ?.put("username@gmail.com", {"password": "password"});
 
-  final data = await Constants.loginCredentialsBox?.get("username@gmail.com");
 
   final String songListJSON =
       await rootBundle.loadString('json/songs_list.json');
   final List<dynamic> songList = await json.decode(songListJSON);
 
   Constants.songsBox = await collection.openBox<Map>('songs');
-
-  await Constants.songsBox?.clear();
 
   songList.forEach((map) async {
     await Constants.songsBox?.put(map["unique_id"], {

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3067dcb-645e-476e-88c4-7eb4e2c7e4b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c3067dcb-645e-476e-88c4-7eb4e2c7e4b1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,13 +45,15 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/anirudhrp/Desktop/nymblelabs_music/assets/music_background&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anirudhrp/Desktop/nymblelabs_music/assets/songs_icon&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/songs_icon" />
+      <recent name="$PROJECT_DIR$/assets/songs" />
       <recent name="$PROJECT_DIR$/assets/music_background" />
       <recent name="$PROJECT_DIR$/lib/app/details_page" />
       <recent name="$PROJECT_DIR$/lib/app/home_page" />
@@ -83,5 +82,16 @@
       <updated>1712252112021</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
