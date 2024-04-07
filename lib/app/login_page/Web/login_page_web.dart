@@ -61,7 +61,7 @@ class LoginPageWeb extends StatelessWidget {
                         SizedBox(
                             height: 100,
                             width: 100,
-                            child: Image.asset('icon/logo.png')),
+                            child: Image.asset('assets/icon/logo.png')),
                         const Padding(padding: EdgeInsets.all(12)),
                         const EmailInput(),
                         const Padding(padding: EdgeInsets.all(12)),

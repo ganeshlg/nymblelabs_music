@@ -25,7 +25,7 @@ class DetailsWidget extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(songDetails.songIcon),
+                      image: AssetImage("assets/${songDetails.songIcon}"),
                       fit: BoxFit.fill,
                     ),
                     // color: Colors.blue

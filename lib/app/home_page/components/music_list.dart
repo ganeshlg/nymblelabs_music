@@ -13,10 +13,9 @@ class MusicList extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 1.0;
     return BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
-      // context.read<HomePageBloc>().add(const OnLoadSongs());
       return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ListView.builder(
+          child: SafeArea(child: ListView.builder(
             itemBuilder: (BuildContext ctx, int index) {
               List<SongDetails> songList = state.searchedSong.isEmpty
                   ? state.songDetailsList
@@ -44,7 +43,7 @@ class MusicList extends StatelessWidget {
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
                                               image: AssetImage(
-                                                  songList[index].songIcon),
+                                                  "assets/${songList[index].songIcon}"),
                                               fit: BoxFit.fill,
                                             ),
                                             // color: Colors.blue
@@ -105,7 +104,7 @@ class MusicList extends StatelessWidget {
             itemCount: state.searchedSong.isEmpty
                 ? state.songDetailsList.length
                 : state.searchedSongList.length,
-          ));
+          )));
     });
   }
 }

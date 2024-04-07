@@ -1,13 +1,15 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 import 'app.dart';
 import 'constants.dart';
 
 Future<void> main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
+  final directory = await getApplicationDocumentsDirectory();
 
   final collection = await BoxCollection.open(
     'NymbleMusic', // Name of your database
@@ -45,7 +47,8 @@ Future<void> main() async {
       1,
       1,
       1
-    ]), // Key to encrypt your boxes (Only used in Flutter / Dart IO)
+    ]),
+    path: directory.path// Key to encrypt your boxes (Only used in Flutter / Dart IO)
   );
 
   Constants.loginCredentialsBox =
@@ -56,7 +59,7 @@ Future<void> main() async {
 
 
   final String songListJSON =
-      await rootBundle.loadString('json/songs_list.json');
+      await rootBundle.loadString('assets/json/songs_list.json');
   final List<dynamic> songList = await json.decode(songListJSON);
 
   Constants.songsBox = await collection.openBox<Map>('songs');
@@ -72,7 +75,7 @@ Future<void> main() async {
 
   Constants.favoritesBox = await collection.openBox<Map>('favorites');
 
-  await Constants.favoritesBox?.clear();
+  // await Constants.favoritesBox?.clear();
 
   Constants.favoritesBox?.put("username@gmail.com", {"favorites":["1","3","5","7"]});
 

@@ -44,6 +44,7 @@ dependencies:
   equatable: ^2.0.5
 # Local Storage
   hive: ^2.2.3
+  path_provider: ^2.1.2
 #audio player
   just_audio: ^0.9.37
 

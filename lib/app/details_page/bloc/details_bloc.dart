@@ -28,7 +28,7 @@ class DetailsBloc extends Bloc<DetailsEvent, DetailsState> {
       if (player.playing) {
       } else {
         if (event.songDetails.songName != state.currentSong) {
-          player.setAsset("songs/${event.songDetails.songName}.mp3");
+          player.setAsset("assets/songs/${event.songDetails.songName}.mp3");
         }
       }
 

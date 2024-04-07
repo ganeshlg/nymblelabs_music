@@ -63,7 +63,7 @@ class LoginPageMobile extends StatelessWidget {
                       SizedBox(
                           height: 50,
                           width: 50,
-                          child: Image.asset('icon/logo.png')),
+                          child: Image.asset('assets/icon/logo.png')),
                       const Padding(padding: EdgeInsets.all(12)),
                       const EmailInput(),
                       const Padding(padding: EdgeInsets.all(12)),
