@@ -18,9 +18,32 @@ class LoginPageMobile extends StatelessWidget {
       listener: (context, state) {
         switch (state.status) {
           case Status.nextPage:
-            Navigation.navigate(route: Constants.homeScreen, context: context);
+            Navigation.navigate(
+                route: Constants.homeScreen,
+                context: context,
+                email: state.email);
             break;
           case Status.error:
+            var snackBar = SnackBar(
+              content: Text(
+                state.loginError.toString(),
+                style: const TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+              duration: const Duration(milliseconds: 810),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            break;
+          case Status.signUpSuccess:
+            var snackBar = const SnackBar(
+              content: Text(
+                "Email registered successfully, please login...",
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.green,
+              duration: Duration(milliseconds: 810),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
             break;
         }
       },

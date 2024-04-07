@@ -3,9 +3,7 @@ import 'package:nymblelabs_music/data/signup_repository.dart';
 import '../../../data/login_repository.dart';
 import '../../status.dart';
 import 'login_state.dart';
-import 'package:equatable/equatable.dart';
-
-part 'login_event.dart';
+import 'login_event.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(
@@ -30,6 +28,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (event.email.isEmpty) {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           email: event.email,
           emailError: "Email can't be empty",
         ),
@@ -37,6 +36,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     } else if (event.email.length < 8) {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           email: event.email,
           emailError: "Email should be more than 6 characters",
         ),
@@ -46,6 +46,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         .hasMatch(event.email)) {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           email: event.email,
           emailError: "Invalid Email Id",
         ),
@@ -53,6 +54,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     } else {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           email: event.email,
           emailError: "",
         ),
@@ -68,6 +70,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (event.password.isEmpty) {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           password: event.password,
           passwordError: "Password can't be empty",
         ),
@@ -75,6 +78,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     } else if (event.password.length < 8) {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           password: event.password,
           passwordError: "Password should be more than 8 characters",
         ),
@@ -82,6 +86,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     } else {
       emit(
         state.copyWith(
+          status: state.status==Status.error?Status.initial:state.status,
           password: event.password,
           passwordError: "",
         ),
@@ -96,12 +101,23 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         status: Status.loading,
       ),
     );
+
     if (event.isSignUp) {
       try {
-        await _signUpRepository.signUp();
-        emit(state.copyWith(
-          status: Status.nextPage,
-        ));
+        Map response = await _signUpRepository.signUp(state.email, state.password);
+
+        if(response["ERRORCODE"]=="00"){
+          emit(state.copyWith(
+            status: Status.signUpSuccess,
+          ));
+        }else{
+          emit(state.copyWith(
+            status: Status.error,
+            loginError: response["ERRORMSG"]
+          ));
+        }
+
+
       } catch (e) {
         emit(state.copyWith(
           status: Status.error,
@@ -109,10 +125,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       }
     } else {
       try {
-        await _loginRepository.login();
-        emit(state.copyWith(
-          status: Status.nextPage,
-        ));
+        Map response =
+            await _loginRepository.login(state.email, state.password);
+
+        if (response["ERRORCODE"] == "00") {
+          emit(state.copyWith(
+            status: Status.nextPage,
+          ));
+        } else {
+          emit(state.copyWith(
+              status: Status.error, loginError: response["ERRORMSG"]));
+        }
       } catch (e) {
         emit(state.copyWith(
           status: Status.error,

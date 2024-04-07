@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nymblelabs_music/models/song_details_model.dart';
 import '../bloc/home_page_bloc.dart';
 import '../bloc/home_page_event.dart';
 import '../bloc/home_page_state.dart';
@@ -10,17 +11,20 @@ class MusicGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
-      context.read<HomePageBloc>().add(const OnLoadSongs());
-
       return GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4, // number of items in each row
-            mainAxisSpacing: 0.0, // spacing between rows
-            crossAxisSpacing: 0.0, // spacing between columns
+            crossAxisCount: 4,
+            mainAxisSpacing: 0.0,
+            crossAxisSpacing: 0.0,
           ),
-          padding: const EdgeInsets.all(20.0), // padding around the grid
-          itemCount: state.songDetailsList.length, // total number of items
+          padding: const EdgeInsets.all(20.0),
+          itemCount: state.searchedSong.isEmpty
+              ? state.songDetailsList.length
+              : state.searchedSongList.length,
           itemBuilder: (ctx, index) {
+            List<SongDetails> songList = state.searchedSong.isEmpty
+                ? state.songDetailsList
+                : state.searchedSongList;
             return Card(
                 elevation: 10,
                 color: Colors.white.withOpacity(0.9),
@@ -31,20 +35,19 @@ class MusicGrid extends StatelessWidget {
                         Expanded(
                             flex: 60,
                             child: Hero(
-                                tag: 'dp ${state.songDetailsList[index].name}',
+                                tag: 'dp ${songList[index].songName}',
                                 child: Material(
                                     child: InkWell(
                                         onTap: () {
                                           context.read<HomePageBloc>().add(
-                                              OnShowDetails(state
-                                                  .songDetailsList[index]));
+                                              OnShowDetails(
+                                                  songList[index].mainIndex));
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
-                                              image: AssetImage(state
-                                                  .songDetailsList[index]
-                                                  .bgIcon),
+                                              image: AssetImage(
+                                                  songList[index].songIcon),
                                               fit: BoxFit.fill,
                                             ),
                                             // color: Colors.blue
@@ -63,22 +66,46 @@ class MusicGrid extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          "Song Name",
+                                          songList[index].songName,
                                           overflow: TextOverflow.ellipsis,
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyLarge,
                                         ),
-                                        Text("Album Name",
+                                        Text(songList[index].artistName,
                                             overflow: TextOverflow.ellipsis,
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .bodySmall)
                                       ],
                                     )),
-                                const Expanded(
+                                Expanded(
                                     flex: 25,
-                                    child: Icon(Icons.favorite_border))
+                                    child: songList[index].isFavorite
+                                        ? IconButton(
+                                            icon: const Icon(
+                                              Icons.favorite,
+                                              color: Colors.red,
+                                            ),
+                                            onPressed: () {
+                                              context.read<HomePageBloc>().add(
+                                                  OnFavoriteChanged(
+                                                      mainIndex: songList[index]
+                                                          .mainIndex,
+                                                      localIndex: index));
+                                            },
+                                          )
+                                        : IconButton(
+                                            icon: const Icon(
+                                                Icons.favorite_border),
+                                            onPressed: () {
+                                              context.read<HomePageBloc>().add(
+                                                  OnFavoriteChanged(
+                                                      mainIndex: songList[index]
+                                                          .mainIndex,
+                                                      localIndex: index));
+                                            },
+                                          ))
                               ],
                             ))
                       ],

@@ -1,0 +1,100 @@
+[
+  {
+    "unique_id": "1",
+    "song_name": "beautiful",
+    "artist_name": "Alka Yagnik",
+    "image": "songs_icon/1.jpg",
+    "description": "Song by Alka Yagnik"
+  },
+  {
+    "unique_id": "2",
+    "song_name": "better_day",
+    "artist_name": "Shreya Ghoshal",
+    "image": "songs_icon/2.jpg",
+    "description": "Song by Shreya Ghoshal"
+  },
+  {
+    "unique_id": "3",
+    "song_name": "drive_breakbeat",
+    "artist_name": "Arijit Singh",
+    "image": "songs_icon/3.jpg",
+    "description": "Song by Arijit Singh"
+  },
+  {
+    "unique_id": "4",
+    "song_name": "enchanted_chimes",
+    "artist_name": "Udit Narayan",
+    "image": "songs_icon/4.jpg",
+    "description": "Song by Udit Narayan"
+  },
+  {
+    "unique_id": "5",
+    "song_name": "futuristic_beat",
+    "artist_name": "Kishore Kumar",
+    "image": "songs_icon/5.jpg",
+    "description": "Song by Kishore Kumar"
+  },
+  {
+    "unique_id": "6",
+    "song_name": "good_night",
+    "artist_name": "Mohammed Rafi",
+    "image": "songs_icon/6.jpg",
+    "description": "Song by Mohammed Rafi"
+  },
+  {
+    "unique_id": "7",
+    "song_name": "leva_eternity",
+    "artist_name": "Asha Bhosle",
+    "image": "songs_icon/7.jpg",
+    "description": "Song by Asha Bhosle"
+  },
+  {
+    "unique_id": "8",
+    "song_name": "once_in_paris",
+    "artist_name": "Sunidhi Chauhan",
+    "image": "songs_icon/8.jpg",
+    "description": "Song by Sunidhi Chauhan"
+  },
+  {
+    "unique_id": "9",
+    "song_name": "science_documentary",
+    "artist_name": "Sonu Nigam",
+    "image": "songs_icon/9.jpg",
+    "description": "Song by Sonu Nigam"
+  },
+  {
+    "unique_id": "10",
+    "song_name": "solitude_dark_ambient_electronic",
+    "artist_name": "KK",
+    "image": "songs_icon/10.jpg",
+    "description": "Song by KK"
+  },
+  {
+    "unique_id": "11",
+    "song_name": "sunrise_groove",
+    "artist_name": "Kumar Sanu",
+    "image": "songs_icon/11.jpg",
+    "description": "Song by Kumar Sanu"
+  },
+  {
+    "unique_id": "12",
+    "song_name": "sunshine_bliss",
+    "artist_name": "A. R. Rahman",
+    "image": "songs_icon/12.jpg",
+    "description": "Song by A. R. Rahman"
+  },
+  {
+    "unique_id": "13",
+    "song_name": "titanium",
+    "artist_name": "K. J. Yesudas",
+    "image": "songs_icon/13.jpg",
+    "description": "Song by K. J. Yesudas"
+  },
+  {
+    "unique_id": "14",
+    "song_name": "whistle_joyride",
+    "artist_name": "Shaan",
+    "image": "songs_icon/14.jpg",
+    "description": "Song by Shaan"
+  }
+]

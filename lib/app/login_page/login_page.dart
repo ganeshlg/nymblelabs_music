@@ -18,7 +18,9 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         body: BlocProvider(
-            create: (_) => LoginBloc(loginRepository: loginRepository, signUpRepository: signUpRepository),
+            create: (_) => LoginBloc(
+                loginRepository: loginRepository,
+                signUpRepository: signUpRepository),
             child: LayoutBuilder(
               builder: (BuildContext context, BoxConstraints constraints) {
                 if (constraints.maxWidth > Constants.mobileWidth) {

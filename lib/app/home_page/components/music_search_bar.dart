@@ -12,6 +12,9 @@ class MusicSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
+      if (state.searchedSong.isEmpty) {
+        textController.text = state.searchedSong;
+      }
       return Padding(
           padding: const EdgeInsets.all(20),
           child: Card(
@@ -24,7 +27,10 @@ class MusicSearchBar extends StatelessWidget {
                 },
                 cursorColor: Theme.of(context).primaryColor,
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search, color: Theme.of(context).primaryColor,),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).primaryColor,
+                  ),
                   suffixIcon: InkWell(
                     onTap: () {
                       context
@@ -32,7 +38,8 @@ class MusicSearchBar extends StatelessWidget {
                           .add(const OnMusicSearched(""));
                       _onClearTapped();
                     },
-                    child: Icon(Icons.cancel, color: Theme.of(context).primaryColor),
+                    child: Icon(Icons.cancel,
+                        color: Theme.of(context).primaryColor),
                   ),
                   border: InputBorder.none,
                   hintText: 'Enter a search term',

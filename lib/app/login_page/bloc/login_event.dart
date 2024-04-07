@@ -1,4 +1,4 @@
-part of 'login_bloc.dart';
+import 'package:equatable/equatable.dart';
 
 sealed class LoginEvent extends Equatable {
   const LoginEvent();
@@ -34,6 +34,6 @@ final class LoginSubmitted extends LoginEvent {
   List<Object> get props => [isSignUp];
 }
 
-final class SignUpEnabled extends LoginEvent{
+final class SignUpEnabled extends LoginEvent {
   const SignUpEnabled();
 }

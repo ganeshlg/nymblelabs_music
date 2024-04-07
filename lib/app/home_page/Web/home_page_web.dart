@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nymblelabs_music/app/home_page/bloc/home_page_event.dart';
 import 'package:nymblelabs_music/app/home_page/components/music_grid.dart';
 import '../../../constants.dart';
 import '../../navigator.dart';
@@ -9,7 +10,9 @@ import '../bloc/home_page_state.dart';
 import '../components/music_search_bar.dart';
 
 class HomePageWeb extends StatefulWidget {
-  const HomePageWeb({super.key});
+  const HomePageWeb({super.key, required this.email});
+
+  final String email;
 
   @override
   State<StatefulWidget> createState() {
@@ -26,7 +29,11 @@ class _HomePageWebState extends State<HomePageWeb> {
           Navigation.navigate(
               route: Constants.detailsScreen,
               context: context,
-              index: state.index);
+              songDetails: state.songDetailsList[state.index],
+              email: widget.email,
+              callback: () {
+                context.read<HomePageBloc>().add(const OnLoadSongs());
+              });
         }
       },
       child: Column(

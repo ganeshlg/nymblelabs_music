@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:nymblelabs_music/models/song_details_model.dart';
 
 sealed class HomePageEvent extends Equatable {
   const HomePageEvent();
@@ -9,15 +8,15 @@ sealed class HomePageEvent extends Equatable {
 }
 
 final class OnShowDetails extends HomePageEvent {
-  const OnShowDetails(this.songDetails);
+  const OnShowDetails(this.index);
 
-  final SongDetails songDetails;
+  final int index;
 
   @override
-  List<Object> get props => [songDetails];
+  List<Object> get props => [index];
 }
 
-final class OnMusicSearched extends HomePageEvent{
+final class OnMusicSearched extends HomePageEvent {
   const OnMusicSearched(this.searchedSong);
 
   final String searchedSong;
@@ -26,6 +25,16 @@ final class OnMusicSearched extends HomePageEvent{
   List<Object> get props => [searchedSong];
 }
 
-final class OnLoadSongs extends HomePageEvent{
+final class OnFavoriteChanged extends HomePageEvent {
+  const OnFavoriteChanged({required this.mainIndex, required this.localIndex});
+
+  final int mainIndex;
+  final int localIndex;
+
+  @override
+  List<Object> get props => [mainIndex, localIndex];
+}
+
+final class OnLoadSongs extends HomePageEvent {
   const OnLoadSongs();
 }

@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:nymblelabs_music/app/status.dart';
 
 class WaveAnimation extends StatefulWidget {
   const WaveAnimation({super.key, required this.status});
@@ -22,10 +21,6 @@ class WaveAnimationState extends State<WaveAnimation>
       vsync: this, // Synchronize animation with this widget
       duration: const Duration(seconds: 1), // Animation duration
     )..repeat(reverse: true);
-    if(widget.status!=Status.success) {
-      _controller.stop();
-    }
-    // Repeat the animation back and forth
   }
 
   @override
@@ -66,7 +61,7 @@ class WavePainter extends CustomPainter {
       ..strokeWidth = 2.0; // Filling the wave
 
     final pathGreen = Path();
-    pathGreen.moveTo(0, (size.height/2)+2);
+    pathGreen.moveTo(0, (size.height / 2) + 2);
     // pathGreen.lineTo(0, size.height * 0.6); // Starting point for the wave
 
     for (var i = 0; i < size.width; i++) {
@@ -78,7 +73,8 @@ class WavePainter extends CustomPainter {
       pathGreen.lineTo(x, y); // Define wave path
     }
 
-    pathGreen.lineTo(size.width, (size.height/2)+2); // Complete the wave path
+    pathGreen.lineTo(
+        size.width, (size.height / 2) + 2); // Complete the wave path
     // pathGreen.close();
 
     canvas.drawPath(pathGreen, paintGreen); // Draw the green wave

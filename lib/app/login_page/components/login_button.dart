@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../constants.dart';
-import '../../navigator.dart';
 import '../../status.dart';
 import '../bloc/login_bloc.dart';
+import '../bloc/login_event.dart';
 import '../bloc/login_state.dart';
 
 class LoginButton extends StatelessWidget {
@@ -14,7 +13,9 @@ class LoginButton extends StatelessWidget {
     return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
         return state.status == Status.loading
-            ? CircularProgressIndicator(color: Theme.of(context).primaryColor,)
+            ? CircularProgressIndicator(
+                color: Theme.of(context).primaryColor,
+              )
             : Column(children: [
                 Row(children: [
                   Expanded(
@@ -23,15 +24,14 @@ class LoginButton extends StatelessWidget {
                     onPressed:
                         (state.emailError == "" && state.passwordError == "")
                             ? () {
-                                context
-                                    .read<LoginBloc>()
-                                    .add(const LoginSubmitted(true));
+                                context.read<LoginBloc>().add(LoginSubmitted(
+                                    (state.status == Status.signUp)
+                                        ? true
+                                        : false));
                               }
                             : null,
                     child: Text(
-                      state.status == Status.signUp
-                          ? "Sign Up and Login to your account"
-                          : 'Login',
+                      state.status == Status.signUp ? "Sign up" : 'Login',
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nymblelabs_music/app/home_page/bloc/home_page_bloc.dart';
 import 'package:nymblelabs_music/app/home_page/bloc/home_page_event.dart';
 import 'package:nymblelabs_music/app/home_page/bloc/home_page_state.dart';
+import '../../../models/song_details_model.dart';
 
 class MusicList extends StatelessWidget {
   const MusicList({super.key});
@@ -12,11 +13,14 @@ class MusicList extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 1.0;
     return BlocBuilder<HomePageBloc, HomePageState>(builder: (context, state) {
-      context.read<HomePageBloc>().add(const OnLoadSongs());
+      // context.read<HomePageBloc>().add(const OnLoadSongs());
       return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: ListView.builder(
             itemBuilder: (BuildContext ctx, int index) {
+              List<SongDetails> songList = state.searchedSong.isEmpty
+                  ? state.songDetailsList
+                  : state.searchedSongList;
               return SizedBox(
                   height: 70,
                   child: Card(
@@ -32,17 +36,15 @@ class MusicList extends StatelessWidget {
                                     onTap: () {
                                       context.read<HomePageBloc>().add(
                                           OnShowDetails(
-                                              state.songDetailsList[index]));
+                                              songList[index].mainIndex));
                                     },
                                     child: Hero(
-                                        tag:
-                                            'dp ${state.songDetailsList[index].name}',
+                                        tag: 'dp ${songList[index].songName}',
                                         child: Container(
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
-                                              image: AssetImage(state
-                                                  .songDetailsList[index]
-                                                  .bgIcon),
+                                              image: AssetImage(
+                                                  songList[index].songIcon),
                                               fit: BoxFit.fill,
                                             ),
                                             // color: Colors.blue
@@ -58,22 +60,51 @@ class MusicList extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "Song Name",
+                                      songList[index].songName,
                                       overflow: TextOverflow.ellipsis,
-                                      style: Theme.of(context).textTheme.bodyLarge,
+                                      style:
+                                          Theme.of(context).textTheme.bodyLarge,
                                     ),
-                                    Text("Album Name",
+                                    Text(songList[index].artistName,
                                         overflow: TextOverflow.ellipsis,
-                                        style: Theme.of(context).textTheme.bodySmall)
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall)
                                   ],
                                 )),
-                            const Expanded(
-                                flex: 20, child: Icon(Icons.favorite_border))
+                            Expanded(
+                                flex: 25,
+                                child: songList[index].isFavorite
+                                    ? IconButton(
+                                        icon: const Icon(
+                                          Icons.favorite,
+                                          color: Colors.red,
+                                        ),
+                                        onPressed: () {
+                                          context.read<HomePageBloc>().add(
+                                              OnFavoriteChanged(
+                                                  mainIndex:
+                                                      songList[index].mainIndex,
+                                                  localIndex: index));
+                                        },
+                                      )
+                                    : IconButton(
+                                        icon: const Icon(Icons.favorite_border),
+                                        onPressed: () {
+                                          context.read<HomePageBloc>().add(
+                                              OnFavoriteChanged(
+                                                  mainIndex:
+                                                      songList[index].mainIndex,
+                                                  localIndex: index));
+                                        },
+                                      ))
                           ],
                         )),
                   ));
             },
-            itemCount: state.songDetailsList.length,
+            itemCount: state.searchedSong.isEmpty
+                ? state.songDetailsList.length
+                : state.searchedSongList.length,
           ));
     });
   }

@@ -18,9 +18,32 @@ class LoginPageWeb extends StatelessWidget {
       listener: (context, state) {
         switch (state.status) {
           case Status.nextPage:
-            Navigation.navigate(route: Constants.homeScreen, context: context);
+            Navigation.navigate(
+                route: Constants.homeScreen,
+                context: context,
+                email: state.email);
             break;
           case Status.error:
+            var snackBar = SnackBar(
+              content: Text(
+                state.loginError.toString(),
+                style: const TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.red,
+              duration: const Duration(milliseconds: 810),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            break;
+          case Status.signUpSuccess:
+            var snackBar = const SnackBar(
+              content: Text(
+                "Email registered successfully, please login...",
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.green,
+              duration: Duration(milliseconds: 810),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
             break;
         }
       },
@@ -36,8 +59,8 @@ class LoginPageWeb extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         SizedBox(
-                            height: 50,
-                            width: 50,
+                            height: 100,
+                            width: 100,
                             child: Image.asset('icon/logo.png')),
                         const Padding(padding: EdgeInsets.all(12)),
                         const EmailInput(),
